@@ -1,6 +1,6 @@
-import React from "react";
-import { CareerItem } from "./components/career-item";
-import { Form } from "./components/form";
+import { React, useState, useEffect } from "react";
+import { CareerItem } from "../components/career-item";
+import { Form } from "../components/form";
 
 const getJobs = (page, signal) => {
   return fetch(
@@ -12,8 +12,8 @@ const getJobs = (page, signal) => {
   ).then((res) => res.json());
 };
 
-function App() {
-  const [jobs, setJobs] = React.useState(undefined);
+export const Career = () => {
+  const [jobs, setJobs] = useState(undefined);
 
   const loadJobs = (pageNum, signal) =>
   getJobs(pageNum, signal)
@@ -24,9 +24,9 @@ function App() {
       }
     });
 
-  const [page, setPage] = React.useState(1);
+  const [page, setPage] = useState(1);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const ab = new AbortController();
     loadJobs(page, ab.signal);
     return () => {
@@ -36,9 +36,9 @@ function App() {
 
   return (
     <div className="max-w-6xl mx-auto px-3 py-12 space-y-6">
-      <div class="mb-8">
+      <div className="mb-8">
           <div>
-            <h1 class="text-6xl mb-4 font-extrabold">Careers</h1>
+            <h1 className="text-6xl mb-4 font-extrabold">Careers</h1>
           </div>
         </div>
       <div className="flex flex-col md:flex-row gap-3">
@@ -115,5 +115,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

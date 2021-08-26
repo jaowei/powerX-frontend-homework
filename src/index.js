@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+// import { Career } from './pages/career'
+import { Marketplace } from './pages/marketplace'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Marketplace />
   </React.StrictMode>,
   document.getElementById('root')
 );
