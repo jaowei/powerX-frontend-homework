@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { Career } from './pages/career'
-import { Marketplace } from './pages/marketplace'
+import { AuthProvider } from './domains/auth';
+import "./index.css";
+import { Marketplace } from './pages/marketplace';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <AuthProvider>
     <Marketplace />
-  </React.StrictMode>,
+  </AuthProvider>,
   document.getElementById('root')
 );
 
