@@ -1,0 +1,1 @@
+export const BASE_URL = "https://react-web-app-jw.herokuapp.com";

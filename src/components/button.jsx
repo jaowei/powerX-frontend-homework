@@ -1,17 +1,22 @@
 import { classNames } from "../lib/classnames";
 import PropTypes from "prop-types";
 
-export const Button = ({ type = "button", variant, ...props }) => (
-  <button
-    type={type}
-    {...props}
-    className={classNames(
-      "inline-flex justify-center items-center py-2 px-4 border shadow-sm text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500",
-      variant && classByVariant[variant],
-      props.className
-    )}
-  />
-);
+export const Button = ({ type = "button", variant, render, ...props }) => {
+  const className = classNames(
+    "inline-flex justify-center items-center py-2 px-4 border shadow-sm text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500",
+    variant && classByVariant[variant],
+    props.className
+  );
+
+  if (render) {
+    return render({
+      className,
+      ...props
+    })
+  }
+
+  return <button type={type} {...props} className={className} />
+}
 
 const classByVariant = {
   primary: "border-transparent text-white bg-pink-600 hover:bg-pink-700",

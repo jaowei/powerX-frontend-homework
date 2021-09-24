@@ -5,7 +5,7 @@ import { callAll } from "../lib/call-all";
 import { FieldContext } from "./field-context";
 
 export const TextInput = forwardRef(function TextInput(
-  { type = "text", onChangeValue, ...props },
+  { type = 'text', onChangeValue, ...props },
   forwardedRef
 ) {
   const fieldId = useContext(FieldContext);

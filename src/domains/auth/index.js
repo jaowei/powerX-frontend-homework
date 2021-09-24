@@ -1,2 +1,4 @@
 export { LoginForm } from "./components/login-form";
-export { useAuthState, AuthProvider, useAuth } from "./auth.state";
+export { RegisterForm } from "./components/register-form"
+export { LogoutButton } from "./components/logout-button"
+export { useAuthState, AuthProvider, useAuth, useRegisterMutation, useWhoami } from "./auth.state";
