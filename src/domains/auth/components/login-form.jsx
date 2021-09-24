@@ -67,8 +67,9 @@ export const LoginForm = () => {
           </Button>
         </div>
       </form>
-      <div>
-        <Link to={"/register"}>Click here to sign up!</Link>
+      <div className="flex justify-center p-3">
+        Or...
+        <Link to={"/register"}><p className="text-blue-700 font-medium"> Click here to sign up!</p></Link>
       </div>
     </div>
   );

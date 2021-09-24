@@ -14,7 +14,7 @@ export const AppShell = ({ children }) => {
                 to="/"
                 className="text-xl inline-block mr-4 font-bold text-pink-700 hover:text-pink-900"
               >
-                React Lover
+                Movies
               </Link>
               <div className="flex items-center gap-4">
               </div>
